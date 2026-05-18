@@ -312,6 +312,42 @@ body {
   100% { left: 120%; }
 }
 
+/* Contact row (phone + email) */
+.contact-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;
+}
+.contact-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+  border: 1px solid var(--line-2); border-radius: 12px;
+  text-decoration: none; color: var(--ink-1);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.contact-item:hover {
+  border-color: rgba(62,224,193,.4);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px rgba(62,224,193,.22);
+  color: var(--ink-0);
+}
+.contact-item .ci-icon {
+  width: 30px; height: 30px; flex: 0 0 30px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(62,224,193,.12);
+  color: var(--accent);
+  border: 1px solid rgba(62,224,193,.35);
+  border-radius: 8px;
+}
+.contact-item .ci-text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.contact-item .ci-label {
+  font-family: "JetBrains Mono", monospace; font-size: 9px;
+  letter-spacing: .2em; color: var(--ink-3); text-transform: uppercase;
+}
+.contact-item .ci-value {
+  font-size: 12px; font-weight: 500; color: inherit;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
 /* Footer */
 .foot {
   margin-top: 24px;
@@ -425,6 +461,35 @@ body {
           <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
         </svg>
       </a>
+
+      <div class="contact-row">
+        <a class="contact-item" href="tel:0975223408">
+          <span class="ci-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                d="M6.6 10.8a15.3 15.3 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/>
+            </svg>
+          </span>
+          <div class="ci-text">
+            <span class="ci-label">Phone</span>
+            <span class="ci-value">0975-223-408</span>
+          </div>
+        </a>
+        <a class="contact-item" href="mailto:u107075701@cmu.edu.tw">
+          <span class="ci-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                points="22,6 12,13 2,6"/>
+            </svg>
+          </span>
+          <div class="ci-text">
+            <span class="ci-label">Email</span>
+            <span class="ci-value">u107075701@cmu.edu.tw</span>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
